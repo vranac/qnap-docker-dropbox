@@ -12,4 +12,4 @@ RUN chmod a+x /root/dropbox.py
 
 RUN cd root && tar xfvz dropbox.tgz && rm dropbox.tgz
 
-CMD python /root/dropbox.py start
+CMD /root/.dropbox-dist/dropboxd

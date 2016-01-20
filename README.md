@@ -20,12 +20,13 @@ Go grab a coffee/tea, the image will be built in the meantime.
 Once you have the image, you can run it. Execute the following command
 
 ```
-docker run -i -t -v /path/you/want/mounted:/Dropbox dropbox
+docker run -i -t -v /path/you/want/mounted:/root/Dropbox dropbox --name=dropbox-vranac
 ```
 
 So lets break this down, you are running the container in the interactive mode,
 running in a pseudo terminal, mounting the path "/path/you/want/mounted" to
-be available in container at "/Dropbox".
+be available in container at "/root/Dropbox", and you gave the container the name
+dropbox-vranac (change to what works for you).
 
 The output of the first run would be something like
 
@@ -36,23 +37,12 @@ Please visit https://www.dropbox.com/cli_link_nonce?nonce=xxxxyyyzzzzz to link t
 
 Once you visit that link, the dropbox will be connected to your dropbox account and the magic can begin.
 
-First thing to do, is to comming the latest changes to the image, so it is available on demand with
-all the changes connecting to your account has created
+The container station in qnap will now pick it up, and you will be able to control it from there.
+
+If you need to get the status of the dropbox daemon, you can execute the following command
 
 ```
-docker commit `docker ps -l -q` dropbox-vranac
+docker exec -it dropbox-vranac /root/dropbox.py status
 ```
 
-With this command you have created a commit/snapshot that you can reference from now on (this allows you to create multiple dropbox account sync on your NAS) by name, in my case it is dropbox-vranac
-
-Now that you have a snapshot, you can stop/kill the container by executing
-
-```
-docker kill `docker ps -l -q`
-```
-
-And finally you can the following to start the container daemonized
-
-```
-docker run -d -v /path/you/want/mounted:/Dropbox --name=dropbox-vranac dropbox-vranac
-```
+Replace dropbox-vranac with your container name

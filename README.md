@@ -38,6 +38,7 @@ Please visit https://www.dropbox.com/cli_link_nonce?nonce=xxxxyyyzzzzz to link t
 Once you visit that link, the dropbox will be connected to your dropbox account and the magic can begin.
 
 The container station in qnap will now pick it up, and you will be able to control it from there.
+I suggest you go to the settings for the container and enable auto start.
 
 If you need to get the status of the dropbox daemon, you can execute the following command
 

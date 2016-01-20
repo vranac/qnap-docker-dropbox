@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER vranac<vranac@gmai.com>
 
 RUN apt-get update
-RUN apt-get install python python-gpgme
+RUN apt-get install -yq python python-gpgme
 
 ADD https://www.dropbox.com/download?plat=lnx.x86_64 ~/dropbox.tgz
 ADD https://www.dropbox.com/download?dl=packages/dropbox.py ~/dropbox.py

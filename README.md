@@ -54,5 +54,5 @@ docker kill `docker ps -l -q`
 And finally you can the following to start the container daemonized
 
 ```
-docker run -d -v /path/you/want/mounted:/Dropbox dropbox-vranac
+docker run -d -v /path/you/want/mounted:/Dropbox --name=dropbox-vranac dropbox-vranac
 ```

@@ -12,15 +12,20 @@ How to use this?
 First execute the following command to build the image
 
 ```
-docker build -t dropbox .
+docker build -t vranac/qnap-docker-dropbox .
 ```
-
 Go grab a coffee/tea, the image will be built in the meantime.
+
+Or pull the image from docker hub by running
+
+```
+docker pull vranac/qnap-docker-dropbox
+```
 
 Once you have the image, you can run it. Execute the following command
 
 ```
-docker run -i -t -v /path/you/want/mounted:/root/Dropbox dropbox --name=dropbox-vranac
+docker run -i -t -v /path/you/want/mounted:/root/Dropbox vranac/qnap-docker-dropbox --name=dropbox-vranac
 ```
 
 So lets break this down, you are running the container in the interactive mode,

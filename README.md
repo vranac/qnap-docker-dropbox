@@ -25,7 +25,7 @@ docker pull vranac/qnap-docker-dropbox
 Once you have the image, you can run it. Execute the following command
 
 ```
-docker run -i -t -v /path/you/want/mounted:/root/Dropbox vranac/qnap-docker-dropbox --name=dropbox-vranac
+docker run -i -t -v /path/you/want/mounted:/root/Dropbox --name=dropbox-vranac vranac/qnap-docker-dropbox 
 ```
 
 So lets break this down, you are running the container in the interactive mode,
